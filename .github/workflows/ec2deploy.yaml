@@ -57,13 +57,13 @@ jobs:
 
       - name: Pull Docker image
         run: |
-          ssh -o StrictHostKeyChecking=no -i key.pem ubuntu@ip-172-31-23-22 'sudo docker pull sergiycheck/cddemo:latest'
+          ssh -o StrictHostKeyChecking=no -i key.pem ubuntu@3.70.176.194 'sudo docker pull sergiycheck/cddemo:latest'
 
       - name: Stop running container
         run: |
-          ssh -o StrictHostKeyChecking=no -i key.pem ubuntu@ip-172-31-23-22 'sudo docker stop cddemo || true'
-          ssh -o StrictHostKeyChecking=no -i key.pem ubuntu@ip-172-31-23-22 'sudo docker rm cddemo || true'
+          ssh -o StrictHostKeyChecking=no -i key.pem ubuntu@3.70.176.194 'sudo docker stop cddemo || true'
+          ssh -o StrictHostKeyChecking=no -i key.pem ubuntu@3.70.176.194 'sudo docker rm cddemo || true'
 
       - name: Run new container
         run: |
-          ssh -o StrictHostKeyChecking=no -i key.pem ubuntu@ip-172-31-23-22 'sudo docker-compose up -d --build'
+          ssh -o StrictHostKeyChecking=no -i key.pem ubuntu@3.70.176.194 'sudo docker-compose up -d --build'
